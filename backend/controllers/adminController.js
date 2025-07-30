@@ -39,9 +39,9 @@ const addDoctor  = async(req,res) =>{
 
          // upload image to cloudinary
          console.log("2");
-        // const imageUpload = await cloudinary.uploader.upload(imageFile.Path, {resource_type: "image"})
-        // const imageUrl = imageUpload.secure_url 
-        const imageUrl="https://t4.ftcdn.net/jpg/07/07/89/33/360_F_707893394_5DEhlBjWOmse1nyu0rC9T7ZRvsAFDkYC.jpg"
+        const imageUpload = await cloudinary.uploader.upload(imageFile.path, {resource_type: "image"})
+        const imageUrl = imageUpload.secure_url 
+       // const imageUrl="https://t4.ftcdn.net/jpg/07/07/89/33/360_F_707893394_5DEhlBjWOmse1nyu0rC9T7ZRvsAFDkYC.jpg"
         console.log("3");
         const doctorData = {
             name,
