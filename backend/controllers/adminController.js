@@ -31,18 +31,17 @@ const addDoctor  = async(req,res) =>{
         if(password.length < 8){
             return res.json({success:false,message:"please enter a strong password"})
         } 
-        // console.log("2");
 
         // hashing doctor password
         const salt = await bcrypt.genSalt(10)
         const hashedPassword = await bcrypt.hash(password, salt)
 
          // upload image to cloudinary
-         console.log("2");
+
         const imageUpload = await cloudinary.uploader.upload(imageFile.path, {resource_type: "image"})
         const imageUrl = imageUpload.secure_url 
        // const imageUrl="https://t4.ftcdn.net/jpg/07/07/89/33/360_F_707893394_5DEhlBjWOmse1nyu0rC9T7ZRvsAFDkYC.jpg"
-        console.log("3");
+       
         const doctorData = {
             name,
             email,
