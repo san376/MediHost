@@ -10,7 +10,6 @@ const DoctorsList = () => {
       getAllDoctors()
     }
   }, [aToken])
-
   return (
     <div className='m-5 max-h-[90vh] overflow-y-scroll'>
       <h1 className='text-lg font-medium'>ALL Doctors</h1>
