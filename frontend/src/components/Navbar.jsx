@@ -9,6 +9,9 @@ const navbar = () => {
   const navigate=useNavigate();
 
   const {token,setToken,userData} = useContext(AppContext)
+  console.log(token)
+  console.log(userData)
+
   const [showMenu, setShowMenu]= useState(false)
 
   const logout = () => {
@@ -38,6 +41,7 @@ const navbar = () => {
         </NavLink>
       </ul>
       <div className='flex items-center gap- 4'>
+
         {
           token && userData 
           ? <div className='flex items-center gap-2 cursor-pointer group relative'>
