@@ -1,5 +1,5 @@
 import validator from "validator";
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import userModel from "../models/userModel.js";
 import jwt from "jsonwebtoken";
 import { v2 as cloudinary } from "cloudinary";
@@ -78,7 +78,6 @@ const getProfile = async (req, res) => {
   try {
     const { userId } = req.body;
     const userData = await userModel.findById(userId).select("-password");
-    console.log(userData)
 
     res.json({ success: true, userData });
   } catch (error) {
