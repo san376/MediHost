@@ -20,7 +20,7 @@ const AppContextProvider =(props)=> {
             if(data.success){
                 setDoctors(data.doctors)
             }else{
-                toString.error(data.message)
+                toast.error(data.message)
             }
 
         } catch (error) {
