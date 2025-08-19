@@ -14,6 +14,6 @@ userRouter.post('/book-appointment',authUser,bookAppointment)
 userRouter.get('/appointments',authUser,listAppointment)
 userRouter.post('/cancel-appointment',authUser,cancelAppointment)
 userRouter.post('/payment-razorpay',authUser,paymentRazorPay)
-userRouter.post('/verifyRazorpay', authUser, verifyRazorpay)
+userRouter.post('/verifyRazorpay', verifyRazorpay)
 
 export default userRouter
