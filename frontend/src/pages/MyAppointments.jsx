@@ -69,15 +69,18 @@ const MyAppointements = () => {
         console.log(response)
 
         try {
-
+          console.log(15)
           const {data}= await axios.post(backendUrl +'/api/user/verifyRazorpay',response,{headers:{Authorization: `Bearer ${token}`}})
-
+           console.log(16)
+           console.log(data)
           if(data.success){
+             console.log(17)
             getUserAppointments()
             navigate('/my-appointments')
           }
 
         } catch (error) {
+           console.log(18)
           console.log(error)
           toast.error(error.message)
         }
@@ -117,7 +120,7 @@ const MyAppointements = () => {
     <div>
       <p className='pb-3 mt-12 font-medium text-zinc-700 border-b'>My appointments</p>
       <div>
-        {appointments.map((item, index) => (
+        {appointments.map((item, index) => (  
           <div className='grid grid-cols-[1fr_2fr] gap-4 sm:flex sm:gap-6 py-2 border-b' key={index}>
             <div>
               <img className='w-32 bg-indigo-50 ' src={item.docData.image} alt="" />
@@ -132,7 +135,7 @@ const MyAppointements = () => {
             </div>
             <div></div>
             <div className='flex flex-col gap-2 justify-end'>
-              {!item.cancelled && item.payment && <button className='sm:min-w-48 py-2 border rounded text-stone-500 bg-indigo-100'>Paid</button>}
+              {!item.cancelled && !item.isCompleted && item.payment && <button className='sm:min-w-48 py-2 border rounded text-stone-500 bg-indigo-100'>Paid</button>}
               {!item.cancelled && !item.isCompleted && !item.payment && <button onClick={() => appointmentRazorpay(item._id)} className='text-sm text-stone-500 text-center sm:min-w-48 py-2 border rounded hover:bg-primary hover:text-white transition-all duration-300'>Pay Online</button>}
               {!item.cancelled && !item.isCompleted && <button onClick={() => cancelAppointment(item._id)} className='text-sm text-stone-500 text-center sm:min-w-48 py-2 border rounded hover:bg-red-600 hover:text-white transition-all duration-300'>Cancel appointment</button>}
               {item.cancelled && !item.isCompleted && <button className='sm:min-w-48 py-2 border border-red-500 rounded text-red-500'> Appointment Cancelled</button>}
