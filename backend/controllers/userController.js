@@ -57,7 +57,7 @@ const loginUser = async (req, res) => {
       return res.json({ success: false, message: "User does not exist" });
     }
 
-    const isMatch = await bcrypt.compare(password, user.password);
+    const isMatch = await bcrypt.compare(password, user.password);    ////////////////
 
     if (isMatch) {
       const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
@@ -74,7 +74,7 @@ const loginUser = async (req, res) => {
 //Api to get user profile data
 
 const getProfile = async (req, res) => {
-  console.log(2);
+  console.log(2); 
   try {
     const { userId } = req.body;
     const userData = await userModel.findById(userId).select("-password");
@@ -302,3 +302,8 @@ export {
   paymentRazorPay,
   verifyRazorpay
 };
+
+
+
+// Razorpay works by first creating an order on the backend, then processing the payment securely on the frontend using Razorpay Checkout.
+// After payment, the backend verifies the transaction with Razorpay and updates the appointment status. 

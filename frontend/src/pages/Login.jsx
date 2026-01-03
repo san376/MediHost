@@ -23,7 +23,7 @@ const Login = () => {
   const onSubmitHandler = async (event) => {
     console.log("error sdhb")
     event.preventDefault()
-    console.log("error sdhb")
+    console.log("error bdhb")
 
     try {
       if (state === 'Sign Up') {
@@ -77,7 +77,7 @@ const Login = () => {
           <p>Password</p>
           <input className='border border-zinc-300 rounded w-full p-2 mt-1' type="password" onChange={(e) => setPassword(e.target.value)} value={password} required />
         </div>
-        <button type='submit' onClick={onSubmitHandler} className='bg-primary text-white w-full py-2 rounded-md text-base  ' >{state === 'Sign Up' ? "Create Account" : "Login"}</button>
+        <button type='submit' onClick={onSubmitHandler} className='bg-primary text-white max-w-fit py-2 rounded-md text-base  ' >{state === 'Sign Up' ? "Create Account" : "Login"}</button>
         {
           state === "Sign Up"
             ? <p>Already have a account? <span onClick={() => setState('Login')} className='text-primary underline cursor-pointer'>Login here</span></p>

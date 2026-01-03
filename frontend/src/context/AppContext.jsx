@@ -3,7 +3,7 @@ import { doctors } from "../assets/assets";
 import axios from 'axios'
 import { toast } from "react-toastify";
 
-export const AppContext=createContext()
+export const AppContext=createContext()   //createContext is used in React to share data between components without passing props manually at every level.
 const AppContextProvider =(props)=> {
     const currencysymbol = '$'
     const backendUrl = import.meta.env.VITE_BACKEND_URL
@@ -17,6 +17,7 @@ const AppContextProvider =(props)=> {
 
             
             const {data} = await axios.get(backendUrl + '/api/doctor/list')
+            console.log(data);
             if(data.success){
                 setDoctors(data.doctors)
             }else{
