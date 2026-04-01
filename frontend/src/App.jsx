@@ -12,6 +12,9 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import { ToastContainer, toast } from 'react-toastify';
 
+// toast: tiggers the notification
+// ToastContainer: we can manage position, theme, CloseonClick etc..
+
 
 const App = () => {
   return (
