@@ -19,3 +19,14 @@ createRoot(document.getElementById('root')).render(
 // Connects React to the HTML page
 // Creates a React root
 // Renders the React component tree
+
+// Babel will convert jsx/Modern js into older javascript
+// Because Browser will not understand the jSX
+
+
+
+// More than 1 Default Export should not be Created in a single file
+// we can change the name of the function while import in default Export
+// For Default Export willnot use {}
+
+CreateRoot(....) is React 18 Function
