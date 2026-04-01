@@ -1,12 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+// It pulls the Outfit font family from Google’s servers.  Weight should be 100..900 (Thin to Extra bold)
+// If the Outfit font isn't ready yet,immediately renders your text using a system font (a "fallback").
+// display=swap : The user sees standard text immediately and can start reading. when the loading completed shifted to given font. without display=swap  user is waited for text for 1-2 sec.
+
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
+@tailwind components; // Reuseable logic , buttons, cards..
+@tailwind utilities; // final ,layout, color, spacing ...
 
 
 *{
     font-family: Outfit;
 }
+// Applies to every sinle element(buttons,div,inputs ..)
+
 .active hr{
     @apply block
 }
