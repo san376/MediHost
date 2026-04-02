@@ -28,8 +28,8 @@ export default [
       ...react.configs.recommended.rules,
       ...react.configs['jsx-runtime'].rules,
       ...reactHooks.configs.recommended.rules,
-      'react/jsx-no-target-blank': 'off',
-      'react-refresh/only-export-components': [
+      'react/jsx-no-target-blank': 'off',       
+      'react-refresh/only-export-components': [ // when the code saved only that component reloads.
         'warn',
         { allowConstantExport: true },
       ],
